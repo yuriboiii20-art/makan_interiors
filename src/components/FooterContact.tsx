@@ -4,6 +4,7 @@ import {
   Phone,
   Instagram,
   MessageCircle,
+  Mail,
   Sparkles,
   Send,
   CheckCircle,
@@ -29,6 +30,9 @@ export const FooterContact: React.FC = () => {
     }
     if (formData.phone) {
       messageText += `\n*Phone:* ${formData.phone}`;
+    }
+    if (formData.email) {
+      messageText += `\n*Email:* ${formData.email}`;
     }
     if (formData.service) {
       messageText += `\n*Service:* ${formData.service}`;
@@ -67,6 +71,13 @@ export const FooterContact: React.FC = () => {
       href: 'tel:+917899962191',
       color: 'bg-stone-900 hover:bg-stone-800 text-gold-300 shadow-stone-900/25',
       label: 'Direct Call'
+    },
+    {
+      name: 'Email',
+      icon: Mail,
+      href: 'mailto:makan.constructions5@gmail.com',
+      color: 'bg-amber-600 hover:bg-amber-700 text-white shadow-amber-600/25',
+      label: 'Email'
     },
     {
       name: 'Instagram',
@@ -240,9 +251,18 @@ export const FooterContact: React.FC = () => {
             />
           </div>
 
-          <div className="flex items-center gap-2 text-xs font-semibold text-stone-600">
-            <MapPin className="w-3.5 h-3.5 text-gold-600 flex-shrink-0" />
-            <span>Bangalore, Karnataka &bull; Available for Select Architectural Projects</span>
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 text-xs font-semibold text-stone-600">
+            <a
+              href="mailto:makan.constructions5@gmail.com"
+              className="flex items-center gap-1.5 hover:text-gold-700 transition-colors"
+            >
+              <Mail className="w-3.5 h-3.5 text-gold-600 flex-shrink-0" />
+              <span>makan.constructions5@gmail.com</span>
+            </a>
+            <div className="flex items-center gap-1.5">
+              <MapPin className="w-3.5 h-3.5 text-gold-600 flex-shrink-0" />
+              <span>Bangalore, Karnataka &bull; Available for Select Architectural Projects</span>
+            </div>
           </div>
         </div>
 
