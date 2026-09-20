@@ -37,7 +37,7 @@ export const AboutFounder: React.FC = () => {
               {/* Picture Frame - Natural Full Portrait, No Cutting */}
               <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border-3 border-white bg-stone-100 flex items-center justify-center">
                 <img
-                  src="/founder.png"
+                  src="/1founder.png"
                   alt="Founder & Principal - Mohammed Jawad"
                   className="w-full h-auto max-h-[580px] object-contain object-center transform hover:scale-102 transition-transform duration-700"
                 />
