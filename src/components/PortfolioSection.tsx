@@ -15,7 +15,6 @@ interface ProjectVideo {
   id: number;
   src: string;
   title: string;
-  category: string;
 }
 
 interface ProjectImage {
@@ -26,22 +25,20 @@ interface ProjectImage {
 }
 
 const projectVideos: ProjectVideo[] = [
-  { id: 1, src: '/videos/j1.mp4', title: 'Site Walkthrough 01', category: 'Structure & Framing' },
-  { id: 2, src: '/videos/j2.mp4', title: 'Site Walkthrough 02', category: 'Construction Progress' },
-  { id: 3, src: '/videos/j3.mp4', title: 'Site Walkthrough 03', category: 'Exterior Elevation' },
-  { id: 4, src: '/videos/j4.mp4', title: 'Site Walkthrough 04', category: 'Masonry & Slab Work' },
-  { id: 5, src: '/videos/j5.mp4', title: 'Site Walkthrough 05', category: 'Interior Framing' },
-  { id: 6, src: '/videos/j6.mp4', title: 'Site Walkthrough 06', category: 'Plastering & Finishes' },
-  { id: 7, src: '/videos/j7.mp4', title: 'Site Walkthrough 07', category: 'Site Inspection' },
-  { id: 8, src: '/videos/j8.mp4', title: 'Site Walkthrough 08', category: 'Quality Supervision' },
+  { id: 1, src: '/videos/j1.mp4', title: 'Site Walkthrough 01' },
+  { id: 2, src: '/videos/j2.mp4', title: 'Site Walkthrough 02' },
+  { id: 3, src: '/videos/j3.mp4', title: 'Site Walkthrough 03' },
+  { id: 4, src: '/videos/j4.mp4', title: 'Site Walkthrough 04' },
+  { id: 5, src: '/videos/j5.mp4', title: 'Site Walkthrough 05' },
+  { id: 6, src: '/videos/j6.mp4', title: 'Site Walkthrough 06' },
+  { id: 7, src: '/videos/j7.mp4', title: 'Site Walkthrough 07' },
+  { id: 8, src: '/videos/j8.mp4', title: 'Site Walkthrough 08' },
 ];
 
 const projectImages: ProjectImage[] = [
   { id: 1, src: '/projects/project1.jpg', alt: 'Makan Constructions Project 1', title: 'Structural Development' },
   { id: 2, src: '/projects/project2.jpg', alt: 'Makan Constructions Project 2', title: 'Reinforcement & Framing' },
-  { id: 3, src: '/projects/project3.jpg', alt: 'Makan Constructions Project 3', title: 'Elevation & Brickwork' },
-  { id: 4, src: '/projects/project4.jpg', alt: 'Makan Constructions Project 4', title: 'Exterior Plaster Work' },
-  { id: 5, src: '/projects/project5.jpg', alt: 'Makan Constructions Project 5', title: 'Dual-Storey Residential Site' }
+  { id: 3, src: '/projects/project3.jpg', alt: 'Makan Constructions Project 3', title: 'Elevation & Brickwork' }
 ];
 
 export const PortfolioSection: React.FC = () => {
@@ -264,14 +261,11 @@ export const PortfolioSection: React.FC = () => {
 
                   {/* Bottom Video Meta & Fullscreen CTA */}
                   <div className="absolute bottom-0 inset-x-0 p-4 z-10 text-white">
-                    <span className="text-[11px] font-medium text-gold-400 block tracking-wide uppercase">
-                      {video.category}
-                    </span>
-                    <h4 className="font-sans font-bold text-base text-white truncate mt-0.5">
+                    <h4 className="font-sans font-bold text-base text-white truncate">
                       {video.title}
                     </h4>
 
-                    <div className="flex items-center gap-1.5 mt-2.5 text-[11px] font-medium text-stone-300 group-hover:text-gold-300 transition-colors">
+                    <div className="flex items-center gap-1.5 mt-2 text-[11px] font-medium text-stone-300 group-hover:text-gold-300 transition-colors">
                       <Maximize2 className="w-3.5 h-3.5" />
                       <span>Click to play full screen</span>
                     </div>
@@ -336,7 +330,7 @@ export const PortfolioSection: React.FC = () => {
                   {/* Clean Bottom Label */}
                   <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-stone-950/80 via-stone-950/30 to-transparent text-white pointer-events-none opacity-90 group-hover:opacity-100 transition-opacity">
                     <span className="text-xs font-semibold tracking-wide text-gold-300 uppercase block">
-                      Phase 0{project.id}
+                      Site 0{project.id}
                     </span>
                     <h5 className="text-sm font-bold truncate text-white">
                       {project.title}
@@ -376,7 +370,7 @@ export const PortfolioSection: React.FC = () => {
                 Clip {projectVideos[selectedVideoIndex].id} of {projectVideos.length}
               </span>
               <span className="font-sans text-xs sm:text-sm font-medium text-stone-300 hidden sm:inline">
-                {projectVideos[selectedVideoIndex].title} — {projectVideos[selectedVideoIndex].category}
+                {projectVideos[selectedVideoIndex].title}
               </span>
             </div>
 
