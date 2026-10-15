@@ -24,15 +24,18 @@ interface ProjectImage {
   title: string;
 }
 
+// Note: Videos are listed newest-first so latest uploads appear first in the showcase
 const projectVideos: ProjectVideo[] = [
-  { id: 1, src: '/videos/j1.mp4', title: 'Site Walkthrough 01' },
-  { id: 2, src: '/videos/j2.mp4', title: 'Site Walkthrough 02' },
-  { id: 3, src: '/videos/j3.mp4', title: 'Site Walkthrough 03' },
-  { id: 4, src: '/videos/j4.mp4', title: 'Site Walkthrough 04' },
-  { id: 5, src: '/videos/j5.mp4', title: 'Site Walkthrough 05' },
-  { id: 6, src: '/videos/j6.mp4', title: 'Site Walkthrough 06' },
-  { id: 7, src: '/videos/j7.mp4', title: 'Site Walkthrough 07' },
+  { id: 10, src: '/videos/j10.mp4', title: 'Site Walkthrough 10' },
+  { id: 9, src: '/videos/j9.mp4', title: 'Site Walkthrough 09' },
   { id: 8, src: '/videos/j8.mp4', title: 'Site Walkthrough 08' },
+  { id: 7, src: '/videos/j7.mp4', title: 'Site Walkthrough 07' },
+  { id: 6, src: '/videos/j6.mp4', title: 'Site Walkthrough 06' },
+  { id: 5, src: '/videos/j5.mp4', title: 'Site Walkthrough 05' },
+  { id: 4, src: '/videos/j4.mp4', title: 'Site Walkthrough 04' },
+  { id: 3, src: '/videos/j3.mp4', title: 'Site Walkthrough 03' },
+  { id: 2, src: '/videos/j2.mp4', title: 'Site Walkthrough 02' },
+  { id: 1, src: '/videos/j1.mp4', title: 'Site Walkthrough 01' },
 ];
 
 const projectImages: ProjectImage[] = [
@@ -247,9 +250,15 @@ export const PortfolioSection: React.FC = () => {
                     <span className="px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-white/20 backdrop-blur-md border border-white/20">
                       Clip {video.id} of {projectVideos.length}
                     </span>
-                    <span className="px-2 py-0.5 rounded-md text-[10px] font-medium bg-stone-900/60 backdrop-blur-sm text-gold-300">
-                      9:16 HD
-                    </span>
+                    {index === 0 ? (
+                      <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-gold-500 text-stone-950 uppercase tracking-wider shadow-sm">
+                        Latest
+                      </span>
+                    ) : (
+                      <span className="px-2 py-0.5 rounded-md text-[10px] font-medium bg-stone-900/60 backdrop-blur-sm text-gold-300">
+                        9:16 HD
+                      </span>
+                    )}
                   </div>
 
                   {/* Center Play Button Overlay */}
@@ -369,6 +378,11 @@ export const PortfolioSection: React.FC = () => {
               <span className="px-3 py-1 rounded-full text-xs font-bold bg-gold-600 text-stone-950 uppercase tracking-wider">
                 Clip {projectVideos[selectedVideoIndex].id} of {projectVideos.length}
               </span>
+              {selectedVideoIndex === 0 && (
+                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-gold-400 text-stone-950 uppercase tracking-wider">
+                  Latest
+                </span>
+              )}
               <span className="font-sans text-xs sm:text-sm font-medium text-stone-300 hidden sm:inline">
                 {projectVideos[selectedVideoIndex].title}
               </span>
